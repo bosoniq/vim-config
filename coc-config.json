@@ -1,0 +1,19 @@
+{
+    "languageserver": {
+        "intelephense": {
+            "command": "~/bin/npx intelephense",
+            "args": ["--stdio"],
+            "filetypes": ["php"],
+            "initializationOptions": {
+                "storagePath": "/tmp/intelephense"
+            }
+        }
+    },
+    "snippets": {
+        "ultisnips": {
+            "directories": [
+                "~/Dropbox/tech/vim/vim-config/snippets"
+            ]
+        }
+    }
+}
