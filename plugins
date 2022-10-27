@@ -1,0 +1,29 @@
+"""Plugins
+
+call plug#begin('~/.local/share/nvim/site/autoload/')
+
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary' " For commenting out
+Plug 'amiorin/vim-project'
+Plug 'tpope/vim-obsession'
+Plug 'vim-scripts/phpfolding.vim'
+
+Plug 'yegappan/grep'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ludovicchabant/vim-gutentags'
+
+Plug 'StanAngeloff/php.vim'
+Plug 'joonty/vim-phpqa'
+Plug 'adoy/vim-php-refactoring-toolbox'
+
+Plug 'ap/vim-buftabline'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'ayu-theme/ayu-vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'honza/vim-snippets'
+" Plug 'algotech/ultisnips-php'
+
+call plug#end()
+
