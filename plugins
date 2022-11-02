@@ -11,6 +11,7 @@ Plug 'vim-scripts/phpfolding.vim'
 Plug 'yegappan/grep'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-ctrlp-autoignore' " .ctrlpignore files
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
@@ -22,8 +23,6 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'ayu-theme/ayu-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'honza/vim-snippets'
-" Plug 'algotech/ultisnips-php'
 
 call plug#end()
 
