@@ -1,7 +1,7 @@
 let phpcs='phpcs' 
 let phpmd='phpmd'
 
-"Import main configuration
+"Import plugins
 let $PLUGINS = $CONFIGDIR . '/vim-config/plugins'
 execute 'source ' . $PLUGINS
 
