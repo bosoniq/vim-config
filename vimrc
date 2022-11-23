@@ -25,6 +25,9 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+" set line char guide
+set colorcolumn=120
+
 
 " Auto-close brackets
 " inoremap " ""<left>
