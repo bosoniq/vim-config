@@ -1,4 +1,4 @@
-" Vim settings syntax on
+"pff Vim settings syntax on
 " :set guifont=Fira\ Code\ 11
 " set guifont=DeJaVu\ Sans\ Mono\ 11
 " :set guifont=Noto\ Sans\ 10
@@ -29,12 +29,7 @@ set expandtab
 set colorcolumn=120
 
 
-
 " Auto-close brackets
-" inoremap " ""<left>
-" inoremap ' ''<left>
-" inoremap ( ()<left>
-" inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O 
@@ -118,13 +113,10 @@ let g:buftabline_numbers = 1
 """""""""""""""""""
 """ Colorshceme """
 """""""""""""""""""
-" colorscheme lucius
-" colorscheme atlantis
-colorscheme ayu
 set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
+" let ayucolor="light"  " for light version of theme
 let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
+" let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 
 
