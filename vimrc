@@ -29,6 +29,7 @@ set expandtab
 set colorcolumn=120
 
 
+
 " Auto-close brackets
 " inoremap " ""<left>
 " inoremap ' ''<left>
@@ -37,7 +38,16 @@ set colorcolumn=120
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O 
-" imap qq <Esc>
+
+"""""""""""""""
+"" Yank mods ""
+"""""""""""""""
+" yank relative path to system clipboard (\crp)
+nnoremap <leader>crp :let @+=expand("%")<CR>
+
+" yank file name to system clipboard (\cfn)
+nnoremap <leader>cfn :let @+=expand("%:t")<CR>
+
 
 filetype plugin on
 
