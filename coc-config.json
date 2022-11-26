@@ -12,7 +12,7 @@
     "snippets": {
         "ultisnips": {
             "directories": [
-                "~/Dropbox/tech/vim/vim-config/snippets"
+                "~/bin/vim-config/snippets"
             ]
         }
     }
