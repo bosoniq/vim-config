@@ -1,0 +1,16 @@
+
+"""PHPQA -  :Php, :Phpcs, :Phpmd, :Phpcc
+" PHP Code Sniffer binary (default = "phpcs")
+let g:phpqa_codesniffer_cmd=phpcs
+let g:phpqa_codesniffer_args = "--standard=PSR2 -n"
+let g:phpqa_codesniffer_autorun = 1
+
+" PHP Mess Detector binary (default = "phpmd")
+let g:phpqa_messdetector_cmd=phpmd
+let g:phpqa_messdetector_autorun = 0
+
+" Stop the location list opening automatically
+let g:phpqa_open_loc = 1
+
+
+

@@ -1,0 +1,6 @@
+
+""""""""""""""""""""""""
+""" Buftabline setup """
+""""""""""""""""""""""""
+let g:buftabline_numbers = 1
+

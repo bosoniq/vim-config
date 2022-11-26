@@ -1,0 +1,26 @@
+
+""""""""""""""""""""""""
+"""" Lightline setup """
+""""""""""""""""""""""""
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'gitbranch', 'session' ] ]
+      \ },
+      \ 'component': {
+      \   'session': '%{GetSessId(v:this_session)}',
+      \   'gitbranch': '%{gitbranch#name()}'
+      \ },
+      \ }
+
+
+function! GetSessId(string)
+   let passedString = a:string
+   if strlen(passedString) > 0
+       let sessFileComponents = split(passedString, '/')
+       return join(sessFileComponents[-2: -1], '/')
+   endif
+   return 'No Session'
+endfunction
+
