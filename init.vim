@@ -7,3 +7,4 @@ execute 'source ' . $PLUGINS
 
 "Import main configuration
 let $CONFIG = $CONFIGDIR . '/build/vimrc'
+execute 'source ' . $CONFIG
