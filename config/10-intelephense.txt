@@ -1,0 +1,9 @@
+
+""""""""""""""""""""
+""" intelephense """
+""""""""""""""""""""
+
+nnoremap <leader>fcn :call CocAction('runCommand', 'intelephense.fixClassName')<CR>
+nnoremap <leader>fns :call CocAction('runCommand', 'intelephense.fixNamespace')<CR>
+nnoremap <leader>fcc :call CocAction('runCommand', 'intelephense.completeConstructor')<CR>
+

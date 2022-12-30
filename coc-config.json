@@ -9,11 +9,7 @@
             }
         }
     },
-    "snippets": {
-        "ultisnips": {
-            "directories": [
-                "~/bin/vim-config/snippets"
-            ]
-        }
-    }
+    "intelephense.composer.path": "~/bin/composer",
+    "snippets.ultisnips.directories": ["~/bin/vim-config/snippets"],
+    "coc.preferences.extensionUpdateCheck": "daily"
 }
