@@ -8,6 +8,6 @@ let g:ctrlp_prompt_mappings = {
     \ } "Open file in new buffer
 
 nnoremap <C-p> <Esc>:CtrlP<Cr>
-nnoremap <C-b> <Esc>:CtrlPBuffer<Cr>
+nnoremap <C-t> <Esc>:CtrlPBuffer<Cr>
 nnoremap <C-r> <Esc>:CtrlPMRU<Cr>
 
