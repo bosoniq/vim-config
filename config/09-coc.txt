@@ -1,0 +1,29 @@
+
+
+"""""""""""
+""" coc """
+"""""""""""
+
+" Install extensions automatically
+let g:coc_global_extensions = ['@yaegassy/coc-intelephense', 'coc-json', 'coc-spell-checker', 'coc-phpls', 'coc-snippets']
+
+nmap <silent> <leader>a <Plug>(coc-codeaction-cursor)
+nmap <silent> <leader>ga <Plug>(coc-codeaction-line)
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
+
+"""""""""""""""""""""""""""""
+""" coc-snppets (default) """
+"""""""""""""""""""""""""""""
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"   "confirm completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"        "cycle options downwards
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"    " cycle options upwards

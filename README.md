@@ -17,15 +17,10 @@ To load the configuration add the following lines to your `~/.vimrc` or `~/.conf
     execute 'source ' . $CONFIGDIR . '/init.vim'
 
 
-
 # Install plugins 
 
 Run `:PlugInstall`
 
-
-# Install Coc extensions
-
-Run `:CocInstall @yaegassy/coc-intelephense coc-json coc-spell-checker coc-phpls`
 
 
 The final step is to copy the coc-config.json to `~/.config/nvim/coc-settings.json`
