@@ -106,16 +106,13 @@ def docblock(args):
 endglobal
 
 
-snippet <? "php open tag" b
-<?php
-
-
-endsnippet
-
-snippet todo "Todo message" b
+snippet printTodo "Todo message" b
 //	TODO: ${1:message}
 endsnippet
 
+snippet printNote "Note message" b
+//	NOTE: ${1:message}
+endsnippet
 
 snippet shout "php echo and exit"
 echo '${1}'; exit;
@@ -134,65 +131,11 @@ namespace `!p snip.rv = get_namespace()`;
 
 endsnippet
 
-snippet c "php namespace and class" b
-<?php
-
-namespace `!p snip.rv = get_namespace()`;
-
-final class `!p snip.rv = class_name_from_file()`
-{
-	$0
-}
-endsnippet
-
-snippet i "php namespace and interface" b
-<?php
-
-namespace `!p snip.rv = get_namespace()`;
-
-interface `!p snip.rv = class_name_from_file()`
-{
-	$0
-}
-endsnippet
-
-snippet t "php namespace and trait" b
-<?php
-
-namespace `!p snip.rv = get_namespace()`;
-
-trait `!p snip.rv = class_name_from_file()`
-{
-	$0
-}
-endsnippet
-
-snippet $t "this"
+snippet makeThis "this"
 $this->${0}
 endsnippet
 
-snippet class "class" b
-final class ${1:`!p snip.rv = class_name_from_file()`}
-{
-	$0
-}
-endsnippet
-
-snippet interface "interface" b
-interface ${1:`!p snip.rv = class_name_from_file()`}
-{
-	$0
-}
-endsnippet
-
-snippet trait "interface" b
-trait ${1:`!p snip.rv = class_name_from_file()`}
-{
-	$0
-}
-endsnippet
-
-snippet __ "php constructor" b
+snippet makeConstructor "php constructor" b
 `!p snip.rv = generate_properties(t[1])`
 public function __construct($1)
 {
@@ -202,11 +145,11 @@ for l in set_fields_from_arguments(t[1]): snip += l`}
 }
 endsnippet
 
-snippet li "assign local variable to instance variable" b
+snippet makeInstanceProperty "assign local variable to instance variable" b
 $this->${1} = $$1;
 endsnippet
 
-snippet sg "Setter and Getter" b
+snippet makeGetSet "Setter and Getter" b
 
 /** @var ${1} */
 private $${2:`!p if is_custom_type(t[1]): snip.rv = lowercase_first(t[1])`};
@@ -224,11 +167,11 @@ public function get`!p snip.rv = uppercase_first(t[2])`()
 }
 endsnippet
 
-snippet p "property" b
+snippet makeProperty "property" b
 protected $${2:`!p if (is_custom_type(t[1])): snip.rv = lowercase_first(t[1])`};
 endsnippet
 
-snippet m "method" b
+snippet makeMethod "method" b
 /**`!p snip.rv = docblock(t[3])`
  * @return $5
  */
@@ -238,7 +181,7 @@ ${1:public} function ${2:Name}(${3:string} $${4:param}): ${5:void}
 }
 endsnippet
 
-snippet sm "setter" b
+snippet makeSetter "setter" b
 /** @param ${1} $${2:`!p snip.rv = lowercase_first(t[1]) if is_custom_type(t[1]) else ''`} */
 public function set`!p snip.rv = uppercase_first(t[2])`(`!p snip.rv = t[1] + ' ' if is_custom_type(t[1]) else ''`$$2)
 {
@@ -246,7 +189,7 @@ public function set`!p snip.rv = uppercase_first(t[2])`(`!p snip.rv = t[1] + ' '
 }
 endsnippet
 
-snippet gm "getter" b
+snippet makeGetter "getter" b
 /** @return ${1} */
 public function get${2:`!p snip.rv = t[1] if is_custom_type(t[1]) else ''`}()
 {
@@ -278,3 +221,40 @@ array_filter($$1, function($${2:value}) {
 	return $3;
 });
 endsnippet
+
+snippet makeTestMethod "make test" b
+/**
+ * @Given 
+ * @When 
+ * @Then 
+ */
+public function test${1}(): void
+{
+	self::assertTrue(true);
+}
+endsnippet
+
+snippet printRefactor "Print refctor commands" b
+/**
+ * PHP Refactoring
+ * ===============
+ * 
+ * <Leader>rlv  PhpRenameLocalVariable()
+ * <Leader>rcv  PhpRenameClassVariable()
+ * <Leader>rm   PhpRenameMethod()
+ * <Leader>eu   PhpExtractUse()
+ * <Leader>ec   PhpExtractConst()
+ * <Leader>ep   PhpExtractClassProperty()
+ * <Leader>em   PhpExtractMethod()
+ * <Leader>np   PhpCreateProperty()
+ * <Leader>du   PhpDetectUnusedUseStatements()
+ * <Leader>==   PhpAlignAssigns()
+ * <Leader>sg   PhpCreateSettersAndGetters()
+ * <Leader>cog  PhpCreateGetters()
+ * <Leader>da   PhpDocAll()
+ */
+endsnippet
+
+
+
+
