@@ -131,11 +131,11 @@ namespace `!p snip.rv = get_namespace()`;
 
 endsnippet
 
-snippet makeThis "this"
+snippet this "this"
 $this->${0}
 endsnippet
 
-snippet makeConstructor "php constructor" b
+snippet mkConstructor "php constructor" b
 `!p snip.rv = generate_properties(t[1])`
 public function __construct($1)
 {
@@ -145,11 +145,11 @@ for l in set_fields_from_arguments(t[1]): snip += l`}
 }
 endsnippet
 
-snippet makeInstanceProperty "assign local variable to instance variable" b
+snippet mkInstanceProperty "assign local variable to instance variable" b
 $this->${1} = $$1;
 endsnippet
 
-snippet makeGetSet "Setter and Getter" b
+snippet mkGetSet "Setter and Getter" b
 
 /** @var ${1} */
 private $${2:`!p if is_custom_type(t[1]): snip.rv = lowercase_first(t[1])`};
@@ -167,11 +167,11 @@ public function get`!p snip.rv = uppercase_first(t[2])`()
 }
 endsnippet
 
-snippet makeProperty "property" b
+snippet mkProperty "property" b
 protected $${2:`!p if (is_custom_type(t[1])): snip.rv = lowercase_first(t[1])`};
 endsnippet
 
-snippet makeMethod "method" b
+snippet mkMethod "method" b
 /**`!p snip.rv = docblock(t[3])`
  * @return $5
  */
@@ -181,7 +181,7 @@ ${1:public} function ${2:Name}(${3:string} $${4:param}): ${5:void}
 }
 endsnippet
 
-snippet makeSetter "setter" b
+snippet mkSetter "setter" b
 /** @param ${1} $${2:`!p snip.rv = lowercase_first(t[1]) if is_custom_type(t[1]) else ''`} */
 public function set`!p snip.rv = uppercase_first(t[2])`(`!p snip.rv = t[1] + ' ' if is_custom_type(t[1]) else ''`$$2)
 {
@@ -189,7 +189,7 @@ public function set`!p snip.rv = uppercase_first(t[2])`(`!p snip.rv = t[1] + ' '
 }
 endsnippet
 
-snippet makeGetter "getter" b
+snippet mkGetter "getter" b
 /** @return ${1} */
 public function get${2:`!p snip.rv = t[1] if is_custom_type(t[1]) else ''`}()
 {
@@ -222,7 +222,7 @@ array_filter($$1, function($${2:value}) {
 });
 endsnippet
 
-snippet makeTestMethod "make test" b
+snippet mkTestMethod "make test" b
 /**
  * @Given 
  * @When 
@@ -238,7 +238,7 @@ snippet printRefactor "Print refctor commands" b
 /**
  * PHP Refactoring
  * ===============
- * 
+ * <leader>fcc  completeConstructor
  * <Leader>rlv  PhpRenameLocalVariable()
  * <Leader>rcv  PhpRenameClassVariable()
  * <Leader>rm   PhpRenameMethod()
@@ -247,24 +247,24 @@ snippet printRefactor "Print refctor commands" b
  * <Leader>ep   PhpExtractClassProperty()
  * <Leader>em   PhpExtractMethod()
  * <Leader>np   PhpCreateProperty()
- * <Leader>du   PhpDetectUnusedUseStatements()
  * <Leader>==   PhpAlignAssigns()
  * <Leader>sg   PhpCreateSettersAndGetters()
  * <Leader>cog  PhpCreateGetters()
  * <Leader>da   PhpDocAll()
+ * <leader>fcn  fixClassName
+ * <leader>fns  fixNamespace
  */
 endsnippet
 
 
-
-snippet makeEqualsString "make string" w
+snippet eqstring "make string" w
 '' === $${1}
 endsnippet
 
-snippet makeEqualsNull "make null" w
+snippet eqnull "make null" w
 null === $${1}
 endsnippet
 
-snippet makeEqualsArray "make array" w
+snippet eqarray "make array" w
 [] === $${1}
 endsnippet

@@ -8,6 +8,7 @@ Plug 'tpope/vim-commentary' " For commenting out
 Plug 'amiorin/vim-project'
 Plug 'tpope/vim-obsession'
 Plug 'vim-scripts/phpfolding.vim'
+Plug 'tpope/vim-surround'
 
 Plug 'yegappan/grep'
 Plug 'ctrlpvim/ctrlp.vim'

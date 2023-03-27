@@ -1,58 +1,4 @@
 
-CtrlP
-=====
-
-Search files, buffers or most recently used (MRU) files
-
-<C-p> open file search
-<C-b> open buffer search
-<C-r> open recent file search
-
-<C-f> , <Ctrl + b> - to cycle between modes
-<C-t> or <Ctrl + v>, <Ctrl + x> to open the selected entry in a new tab or in a new split.
-<C-y> to create a new file and its parent directories.
-<C-z> to mark/unmark multiple files and <c-o> to open them.
-
-
-Indent Lines
-============
-
-- <leader>ig - toggle indent guide lines
-
-
-
-Scaffolding
-===========
-
-type scaffolding and select from the scaffolding options available (class, interface, trait, enum etc)
-
-typing __ will provide a completion option for the constructor
-
-
-Coc shortcuts
-=============
-
-<leader>a   codeaction cursor
-<leader>ga  codeaction line
-<leader>re  codeaction refactor
-gd          jump to method definition
-<C-space>   coc refresh
-
-" Formatting selected code
-<leader>f  <Plug>(coc-format-selected)
-
-
-:CocCommand int<TAB> (provides a list of Intelephense commands - useful for composer)
-
-
-Coc-snippets
-============
-
-<C-j> - Jump to next snippet tabstop
-<C-k> - Jump to previous snippet tabstop
-
-
-
 Intelephense
 ============
 
@@ -72,12 +18,73 @@ PHP Refactoring
 <Leader>ec   PhpExtractConst()
 <Leader>ep   PhpExtractClassProperty()
 <Leader>em   PhpExtractMethod()
-<Leader>np   PhpCreateProperty()
-<Leader>du   PhpDetectUnusedUseStatements()
 <Leader>==   PhpAlignAssigns()
 <Leader>sg   PhpCreateSettersAndGetters()
 <Leader>cog  PhpCreateGetters()
 <Leader>da   PhpDocAll()
+
+
+Copy filname and relative path to system clipboard
+=================================================
+
+<leader>crp  copy relative path to system clipboard (\crp)
+<leader>cfn  copy file name to system clipboard (\cfn)
+
+
+Vim surround
+============
+ysiw' - 'word'
+cs"'  - "word" -> 'word'
+ds"   - "word" -> word
+
+
+Coc shortcuts
+=============
+
+<leader>a   codeaction cursor
+<leader>ga  codeaction line
+<leader>re  codeaction refactor
+gd          jump to method definition
+<C-space>   coc refresh
+
+" Formatting selected code
+<leader>f  <Plug>(coc-format-selected)
+
+
+:CocCommand int<TAB> (provides a list of Intelephense commands - useful for composer)
+
+Indent Lines
+============
+
+- <leader>ig - toggle indent guide lines
+
+
+CtrlP
+=====
+
+Search files, buffers or most recently used (MRU) files
+
+<C-p> open file search
+<C-b> open buffer search
+<C-r> open recent file search
+
+<C-f> , <Ctrl + b> - to cycle between modes
+<C-t> or <Ctrl + v>, <Ctrl + x> to open the selected entry in a new tab or in a new split.
+<C-y> to create a new file and its parent directories.
+<C-z> to mark/unmark multiple files and <c-o> to open them.
+
+Scaffolding
+===========
+
+type scaffolding and select from the scaffolding options available (class, interface, trait, enum etc)
+
+
+Coc-snippets
+============
+
+<C-j> - Jump to next snippet tabstop
+<C-k> - Jump to previous snippet tabstop
+
 
 
 Open class shortcut
@@ -88,11 +95,6 @@ gd (whilst cursor over method)
 
 
 
-Copy filname and relative path to system clipboard
-=================================================
-
-<leader>crp  copy relative path to system clipboard (\crp)
-<leader>cfn  copy file name to system clipboard (\cfn)
 
 
 
