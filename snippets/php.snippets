@@ -106,12 +106,24 @@ def docblock(args):
 endglobal
 
 
-snippet printTodo "Todo message" b
+snippet docTodo "Todo message" b
 //	TODO: ${1:message}
 endsnippet
 
-snippet printNote "Note message" b
+snippet docNote "Note message" b
 //	NOTE: ${1:message}
+endsnippet
+
+snippet docParam "Phpdoc param" w
+@param ${1:type} $${2:name}
+endsnippet
+
+snippet docReturn "Phpdoc return" w
+@return ${1:type}
+endsnippet
+
+snippet docThrows "Phpdoc throws" w
+@throws ${1:exception}
 endsnippet
 
 snippet shout "php echo and exit"
@@ -126,6 +138,18 @@ snippet dump "php dump and die"
 dump($${1}); exit;
 endsnippet
 
+snippet eqstring "equals string" w
+'' === $${1}
+endsnippet
+
+snippet eqnull "equals null" w
+null === $${1}
+endsnippet
+
+snippet eqarray "equals array" w
+[] === $${1}
+endsnippet
+
 snippet ns "php namespace" b
 namespace `!p snip.rv = get_namespace()`;
 
@@ -138,6 +162,16 @@ endsnippet
 snippet mkConstructor "php constructor" b
 `!p snip.rv = generate_properties(t[1])`
 public function __construct($1)
+{
+	${0:`!p
+snip >> 1
+for l in set_fields_from_arguments(t[1]): snip += l`}
+}
+endsnippet
+
+snippet mkInvoke "php invoke" b
+`!p snip.rv = generate_properties(t[1])`
+public function __invoke($1): void
 {
 	${0:`!p
 snip >> 1
@@ -197,6 +231,13 @@ public function get${2:`!p snip.rv = t[1] if is_custom_type(t[1]) else ''`}()
 }
 endsnippet
 
+snippet mkGetterSilent "getter without get prefix" b
+public function ${1}(): ${2:type}
+{
+	return $this->${1}
+}
+endsnippet
+
 snippet if "php if" !b
 if (${1}) {
 	$0
@@ -230,9 +271,25 @@ snippet mkTestMethod "make test" b
  */
 public function test${1}(): void
 {
+	// Given 
+
+	// When 
+
+	// Then 
 	self::assertTrue(true);
 }
 endsnippet
+
+
+snippet mkTestSetup "make test setup method" b
+protected function setUp(): void
+{
+	parent::setUp();
+
+	$this->${1} = ${2};
+}
+endsnippet
+
 
 snippet printRefactor "Print refctor commands" b
 /**
@@ -256,15 +313,3 @@ snippet printRefactor "Print refctor commands" b
  */
 endsnippet
 
-
-snippet eqstring "make string" w
-'' === $${1}
-endsnippet
-
-snippet eqnull "make null" w
-null === $${1}
-endsnippet
-
-snippet eqarray "make array" w
-[] === $${1}
-endsnippet
