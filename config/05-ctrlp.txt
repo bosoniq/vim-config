@@ -9,5 +9,5 @@ let g:ctrlp_prompt_mappings = {
 
 nnoremap <C-p> <Esc>:CtrlP<Cr>
 nnoremap <C-t> <Esc>:CtrlPBuffer<Cr>
-nnoremap <C-r> <Esc>:CtrlPMRU<Cr>
+nnoremap <C-y> <Esc>:CtrlPMRU<Cr>
 
