@@ -5,7 +5,7 @@
 """""""""""
 
 " Install extensions automatically
-let g:coc_global_extensions = ['@yaegassy/coc-intelephense', 'coc-json', 'coc-spell-checker', 'coc-phpls', 'coc-snippets']
+let g:coc_global_extensions = ['@yaegassy/coc-intelephense', 'coc-json', 'coc-spell-checker', 'coc-phpls', 'coc-snippets', '@yaegassy/coc-phpstan']
 
 nmap <silent> <leader>a <Plug>(coc-codeaction-cursor)
 nmap <silent> <leader>ga <Plug>(coc-codeaction-line)

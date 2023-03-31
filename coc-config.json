@@ -11,5 +11,7 @@
     },
     "intelephense.composer.path": "~/bin/composer",
     "snippets.ultisnips.directories": ["~/bin/vim-config/snippets"],
-    "coc.preferences.extensionUpdateCheck": "daily"
+    "coc.preferences.extensionUpdateCheck": "daily",
+    "phpstan.toolPath": "~/bin/vim-config/vendor/bin/phpstan",
+    "phpstan.level": "9"
 }

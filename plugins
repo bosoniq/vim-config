@@ -17,12 +17,14 @@ Plug 'ludovicchabant/vim-ctrlp-autoignore' " .ctrlpignore files
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
+Plug 'yaegassy/coc-phpstan', {'do': 'yarn install --frozen-lockfile'}
 Plug 'adoy/vim-php-refactoring-toolbox'
 
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'ayu-theme/ayu-vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
