@@ -4,11 +4,14 @@ Vim php setup. Includes plugins, configurations and snippets
 
 # Build vimrc
 
-Configuration options are found in the `config` directory with one file per plugin. Files are concatenated using the build-vimrc script. 
+Configuration options are found in the `config` directory with one file per plugin. Files are concatenated using the build-vimrc.sh script. 
 
-    ./build-vimrc
+    ./build-vimrc.sh
     
-Running this script will create a `build/vimrc` file which will be the final vimrc file loaded by vim
+Running this script will: 
+ - create a `build/vimrc` file which will be the final vimrc file loaded by vim
+ - copy the coc-settings.json file to `~/.config/nvim/coc-settings.json`
+ - install Composer libs
 
 # Loading vimrc
 To load the configuration add the following lines to your `~/.vimrc` or `~/.config/nvim/init.vim` file:
@@ -21,6 +24,3 @@ To load the configuration add the following lines to your `~/.vimrc` or `~/.conf
 
 Run `:PlugInstall`
 
-
-
-The final step is to copy the coc-config.json to `~/.config/nvim/coc-settings.json`
