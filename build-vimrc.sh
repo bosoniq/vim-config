@@ -1,27 +1,34 @@
 #!/usr/bin/env bash
 
 # read/write options
-DIR=./build
-FILE=${DIR}/vimrc
+BUILD=./build
 CONFIGS=./config
+VIMRC=${BUILD}/vimrc
+COCSETTINGS=${BUILD}/coc-settings.json
 
 # prepare vimrc for writing
-if [ ! -d "$DIR" ]; then
-    mkdir ${DIR}
-    touch ${FILE}
+if [ ! -d "$BUILD" ]; then
+    mkdir ${BUILD}
+    touch ${VIMRC}
+    touch ${COCSETTINGS}
 else 
-    if [ -f "$FILE" ]; then
-        rm ${FILE}
+    if [ -f "$VIMRC" ]; then
+        rm ${VIMRC}
+        rm ${COCSETTINGS}
     fi
 
-    touch ${FILE}
+    touch ${VIMRC}
+    touch ${COCSETTINGS}
 fi
 
 # concat config file contents to build/vimrc
-for CONFIG in ${CONFIGS}/*; do less $CONFIG >> $FILE; done
+for CONFIG in ${CONFIGS}/*; do less $CONFIG >> $VIMRC; done
 
 # create coc settings file
-cp -v coc-settings.json ${HOME}/.config/nvim/coc-settings.json
+cocSettings=$(<coc-settings.json)
+cocSettings="${cocSettings//CONFIGDIR/$PWD}"
+echo "$cocSettings" > ${COCSETTINGS}
+ln -s ${PWD}/${COCSETTINGS} ~/.config/nvim/coc-settings.json
 
 # composer dependency installation/update
 composer -v > /dev/null 2>&1
@@ -39,5 +46,4 @@ else
         composer install
     fi
 fi
-
 
