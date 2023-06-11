@@ -10,8 +10,6 @@ Plug 'tpope/vim-obsession'
 Plug 'vim-scripts/phpfolding.vim'
 Plug 'tpope/vim-surround'
 
-Plug 'yegappan/grep'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ludovicchabant/vim-ctrlp-autoignore' " .ctrlpignore files
 
@@ -28,6 +26,11 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+Plug 'BurntSushi/ripgrep'
+Plug 'smartpde/telescope-recent-files'
 
 call plug#end()
 

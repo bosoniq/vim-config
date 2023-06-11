@@ -10,6 +10,7 @@
         }
     },
     "intelephense.composer.path": "~/bin/composer",
+    "intelephense.licenceKey": "00WEY09R9F7VT7E",
     "snippets.ultisnips.directories": ["CONFIGDIR/snippets"],
     "coc.preferences.extensionUpdateCheck": "daily",
     "phpstan.toolPath": "CONFIGDIR/vendor/bin/phpstan",

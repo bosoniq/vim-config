@@ -5,6 +5,7 @@ BUILD=./build
 CONFIGS=./config
 VIMRC=${BUILD}/vimrc
 COCSETTINGS=${BUILD}/coc-settings.json
+LUANAMESPACE=bosoniq
 
 # prepare vimrc for writing
 if [ ! -d "$BUILD" ]; then
