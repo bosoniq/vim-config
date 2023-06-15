@@ -10,7 +10,7 @@ Configuration options are found in the `config` directory with one file per plug
     
 Running this script will: 
  - create a `build/vimrc` file which will be the final vimrc file loaded by vim
- - copy the coc-settings.json file to `~/.config/nvim/coc-settings.json`
+ - create a symbolic link to `build/coc-settings.json` from `~/.config/nvim/coc-settings.json`
  - install Composer libs
 
 # Loading vimrc
@@ -24,3 +24,10 @@ To load the configuration add the following lines to your `~/.vimrc` or `~/.conf
 
 Run `:PlugInstall`
 
+
+# Fresh installations
+- check that `~/.config/nvim/init.vim` exists and create if necessary
+- install composer, node
+- apt-get install universal-ctags pip
+- run :checkhealth in neovim and follow the instructions for enabling features
+- install a patched font from [NerdFonts](https://www.nerdfonts.com/font-downloads)
