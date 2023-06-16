@@ -4,6 +4,7 @@
 BUILD=./build
 CONFIGS=./config
 LUANAMESPACE=als56gh
+INIT=${BUILD}/init.vim
 VIMRC=${BUILD}/vimrc
 COCSETTINGS=${BUILD}/coc-settings.json
 LUAMODULES=${BUILD}/lua/${LUANAMESPACE}/
@@ -28,6 +29,12 @@ fi
 
 # concat config file contents to build/vimrc
 for CONFIG in ${CONFIGS}/*; do less $CONFIG >> $VIMRC; done
+
+# prepare init.vim
+initVim=$(<init.vim)
+initVim="${initVim//CONFIGDIR/$PWD}"
+echo "$initVim" > ${INIT}
+ln -s ${PWD}/${INIT} ~/.config/nvim/init.vim
 
 # create coc settings file
 cocSettings=$(<coc-settings.json)
