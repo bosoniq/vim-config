@@ -11,6 +11,7 @@ Configuration options are found in the `config` directory with one file per plug
 Running this script will: 
  - create a `build/vimrc` file which will be the final vimrc file loaded by vim
  - create a symbolic link to `build/coc-settings.json` from `~/.config/nvim/coc-settings.json`
+ - create a `build/lua/{your-namespace}/` folder, copy the contents of `lua/modules` and append `lua/main.lua` to the `build/vimrc` file applying the namespace specified in build script
  - install Composer libs
 
 # Loading vimrc
