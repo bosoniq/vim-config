@@ -3,14 +3,20 @@
 # read/write options
 BUILD=./build
 CONFIGS=./config
+LUANAMESPACE=als56gh
+INIT=${BUILD}/init.vim
 VIMRC=${BUILD}/vimrc
 COCSETTINGS=${BUILD}/coc-settings.json
+LUAMODULES=${BUILD}/lua/${LUANAMESPACE}/
 
 # prepare vimrc for writing
 if [ ! -d "$BUILD" ]; then
     mkdir ${BUILD}
     touch ${VIMRC}
     touch ${COCSETTINGS}
+    mkdir "${BUILD}//lua/"
+    touch "${BUILD}//lua//main.lua"
+    mkdir ${LUAMODULES}
 else 
     if [ -f "$VIMRC" ]; then
         rm ${VIMRC}
@@ -24,11 +30,24 @@ fi
 # concat config file contents to build/vimrc
 for CONFIG in ${CONFIGS}/*; do less $CONFIG >> $VIMRC; done
 
+# prepare init.vim
+initVim=$(<init.vim)
+initVim="${initVim//CONFIGDIR/$PWD}"
+echo "$initVim" > ${INIT}
+ln -s ${PWD}/${INIT} ~/.config/nvim/init.vim
+
 # create coc settings file
 cocSettings=$(<coc-settings.json)
 cocSettings="${cocSettings//CONFIGDIR/$PWD}"
 echo "$cocSettings" > ${COCSETTINGS}
 ln -s ${PWD}/${COCSETTINGS} ~/.config/nvim/coc-settings.json
+
+# copy and update lua modules
+main=$(<lua/main.lua)
+main="${main//NAMESPACE/$LUANAMESPACE}"
+echo "$main" >> $VIMRC
+cp -R ${PWD}/lua/modules/. ${LUAMODULES}
+ln -s ${PWD}/${BUILD}/lua ~/.config/nvim/lua
 
 # composer dependency installation/update
 composer -v > /dev/null 2>&1
