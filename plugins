@@ -11,7 +11,6 @@ Plug 'vim-scripts/phpfolding.vim'
 Plug 'tpope/vim-surround'
 
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'ludovicchabant/vim-ctrlp-autoignore' " .ctrlpignore files
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
