@@ -134,6 +134,10 @@ snippet r "php r() and exit"
 r($${1}); exit;
 endsnippet
 
+snippet dd "php dd()"
+dd($${1});
+endsnippet
+
 snippet dump "php dump and die"
 dump($${1}); exit;
 endsnippet
@@ -153,10 +157,6 @@ endsnippet
 snippet ns "php namespace" b
 namespace `!p snip.rv = get_namespace()`;
 
-endsnippet
-
-snippet this "this"
-$this->${0}
 endsnippet
 
 snippet mkConstructor "php constructor" b

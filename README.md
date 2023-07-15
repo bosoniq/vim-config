@@ -29,6 +29,6 @@ Run `:PlugInstall`
 # Fresh installations
 - check that `~/.config/nvim/init.vim` exists and create if necessary
 - install composer, node
-- apt-get install universal-ctags pip ripgrep
+- apt-get install pip ripgrep
 - run :checkhealth in neovim and follow the instructions for enabling features
 - install a patched font from [NerdFonts](https://www.nerdfonts.com/font-downloads)

@@ -10,8 +10,6 @@ Plug 'tpope/vim-obsession'
 Plug 'vim-scripts/phpfolding.vim'
 Plug 'tpope/vim-surround'
 
-Plug 'ludovicchabant/vim-gutentags'
-
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
 Plug 'yaegassy/coc-phpstan', {'do': 'yarn install --frozen-lockfile'}
