@@ -1,7 +1,0 @@
-filetype plugin on
-let g:DisableAutoPHPFolding = 1
-map <F6> <Esc>:EnableFastPHPFolds<Cr>
-map <F7> <Esc>:EnablePHPFolds<Cr>
-map <F8> <Esc>:DisablePHPFolds<Cr>
-nnoremap <Space> za
-

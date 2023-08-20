@@ -27,3 +27,26 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"   "confirm completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"        "cycle options downwards
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"    " cycle options upwards
+
+
+"""""""""""""""
+""" Folding """
+"""""""""""""""
+
+" Add `:Fold` command to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+map <F6> <Esc>:Fold<Cr>
+map <F7> zE
+" nnoremap <Space> za
+
+
+""""""""""""""""""
+""" Formatting """
+""""""""""""""""""
+
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Save on buffer write
+" autocmd BufWritePre <buffer> lua vim.lsp.buf.format()

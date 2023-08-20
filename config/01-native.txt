@@ -6,7 +6,6 @@
 set number
 set hlsearch
 set autoread | au CursorHold * checktime | call feedkeys("lh")
-set foldlevel=1
 set hidden
 
 
