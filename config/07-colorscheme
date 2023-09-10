@@ -3,8 +3,7 @@
 """ Colorshceme """
 """""""""""""""""""
 set termguicolors     " enable true colors support
-" let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+colorscheme gotham
 
+" Set highlighted line
+:highlight CursorLine guifg=#212733 guibg=#f07178

@@ -41,5 +41,24 @@ filetype plugin on
 " Auto complete enhancement
 set completeopt=longest,menuone
 
-" Search is now case insensitive by defaut
+" Search is now case insensitive by default
 set ignorecase
+
+" basic mapping to avoid the problem with fast fingers =P
+:command! WQ wq
+:command! Wq wq
+:command! W w
+:command! Q q
+
+" Make Arrowkey do something usefull, resize the viewports accordingly and
+" it also forces us to use the default Vim movement keys HJKL
+nnoremap <Left> :vertical resize -5<CR>
+nnoremap <Right> :vertical resize +5<CR>
+nnoremap <Up> :resize -5<CR>
+nnoremap <Down> :resize +5<CR>
+
+" highlight current line (\hh)
+nnoremap <leader>hh :set cursorline! <CR>
+
+" refresh config
+nnoremap <Leader>ref :so ~/.config/nvim/init.vim <CR>
