@@ -5,9 +5,9 @@ call plug#begin('~/.local/share/nvim/site/autoload/')
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary' " For commenting out
-Plug 'amiorin/vim-project'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
+Plug 'elentok/format-on-save.nvim' 
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
