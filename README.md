@@ -20,6 +20,7 @@ To load the configuration add the following lines to your `~/.vimrc` or `~/.conf
     let $CONFIGDIR='~/path/to/your/vim-config'
     execute 'source ' . $CONFIGDIR . '/init.vim'
 
+---
 
 # Install plugins
 
@@ -27,7 +28,21 @@ Run `:PlugInstall`
 
 # Install dependencies
 
-Run `npm i prettier intelephense`
+Run `npm i prettier intelephense -g`
+
+Run `apt-get install universal-ctags`
+
+**Note:** This setup uses both intelephense indexing and ctags. For efficiency ctags is limited to the bare minimum in order for `vim-php-namespace` to work.
+
+### Node
+
+To keep things clean you can remap the node gloabl install directory to wherever you want with:
+```
+npm config set prefix "<desired folder path>"
+```
+As part of local set this is mapped to `~/Node/`
+
+---
 
 # Fresh installations
 - check that `~/.config/nvim/init.vim` exists and create if necessary
