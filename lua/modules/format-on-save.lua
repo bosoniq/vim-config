@@ -7,9 +7,9 @@ format_on_save.setup({
   },
   formatter_by_ft = {
     -- php = formatters.lsp,
-    json = formatters.prettierd,
-    markdown = formatters.prettierd,
-    yaml = formatters.prettierd,
+    json = formatters.prettier,
+    markdown = formatters.prettier,
+    yaml = formatters.prettier,
   },
   fallback_formatter = {
     formatters.remove_trailing_whitespace,
