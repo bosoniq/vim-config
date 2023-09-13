@@ -7,12 +7,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary' " For commenting out
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
-Plug 'elentok/format-on-save.nvim' 
+Plug 'elentok/format-on-save.nvim'
+Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
 Plug 'yaegassy/coc-phpstan', {'do': 'yarn install --frozen-lockfile'}
 Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'arnaud-lb/vim-php-namespace'
 
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
@@ -29,4 +31,3 @@ Plug 'BurntSushi/ripgrep'
 Plug 'smartpde/telescope-recent-files'
 
 call plug#end()
-
