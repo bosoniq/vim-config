@@ -6,7 +6,7 @@ format_on_save.setup({
     "/vendor/",
   },
   formatter_by_ft = {
-    php = formatters.lsp,
+    -- php = formatters.lsp,
     json = formatters.prettierd,
     markdown = formatters.prettierd,
     yaml = formatters.prettierd,

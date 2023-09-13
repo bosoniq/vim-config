@@ -55,11 +55,7 @@ map <F7> zE
 
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
-
 map <F2> <Esc>:Format<Cr>
-
-" Save on buffer write
-" autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
 
 
 " Find symbol of current document
