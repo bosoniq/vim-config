@@ -59,20 +59,6 @@ Indent Lines
 - <leader>ig - toggle indent guide lines
 
 
-CtrlP
-=====
-
-Search files, buffers or most recently used (MRU) files
-
-<C-p> open file search
-<C-b> open buffer search
-<C-r> open recent file search
-
-<C-f> , <Ctrl + b> - to cycle between modes
-<C-t> or <Ctrl + v>, <Ctrl + x> to open the selected entry in a new tab or in a new split.
-<C-y> to create a new file and its parent directories.
-<C-z> to mark/unmark multiple files and <c-o> to open them.
-
 Scaffolding
 ===========
 
@@ -102,6 +88,3 @@ Useful help pages
 =================
 
 :help key-notation
-
-:help ctrlp-commands
-:help ctrlp-options
