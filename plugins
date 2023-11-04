@@ -10,6 +10,7 @@ Plug 'tpope/vim-surround'
 Plug 'elentok/format-on-save.nvim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'epwalsh/obsidian.nvim'
+Plug 'ThePrimeagen/harpoon'
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'

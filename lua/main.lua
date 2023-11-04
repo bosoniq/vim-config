@@ -1,3 +1,5 @@
+lua utils = require('NAMESPACE/utils')
 lua require('NAMESPACE/telescope')
 lua require('NAMESPACE/format-on-save')
 lua require('NAMESPACE/obsidian')
+lua require('NAMESPACE/harpoon')

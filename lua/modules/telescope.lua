@@ -4,6 +4,7 @@ telescope.setup{}
 
 -- Load extensions.
 telescope.load_extension('recent_files')
+telescope.load_extension('harpoon')
 
 -- Map a shortcut to open the picker.
 vim.api.nvim_set_keymap("n", "<leader>fr",
