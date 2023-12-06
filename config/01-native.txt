@@ -24,7 +24,7 @@ set laststatus=2
 " Auto-close brackets
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O 
+inoremap {;<CR> {<CR>};<ESC>O
 
 """""""""""""""
 "" Yank mods ""
@@ -62,3 +62,6 @@ nnoremap <leader>hh :set cursorline! <CR>
 
 " refresh config
 nnoremap <Leader>ref :so ~/.config/nvim/init.vim <CR>
+
+" copy to system clipboard
+vnoremap <Leader>sc "+y
