@@ -12,6 +12,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'epwalsh/obsidian.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'kburdett/vim-nuuid'
+Plug 'nvimdev/dashboard-nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
