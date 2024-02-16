@@ -34,5 +34,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'BurntSushi/ripgrep'
 Plug 'smartpde/telescope-recent-files'
+Plug 'tomasky/bookmarks.nvim'
 
 call plug#end()
