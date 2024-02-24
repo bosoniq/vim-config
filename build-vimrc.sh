@@ -5,7 +5,7 @@ LUANAMESPACE=als56gh
 
 # build directories and files
 BUILD="${PWD}/build"
-CONFIGS="${PWD}/config"
+CONFIGS="${PWD}/vim-native"
 INIT=${BUILD}/init.vim
 LUAMAIN="${BUILD}//lua//main.lua"
 VIMRC=${BUILD}/vimrc
@@ -63,7 +63,7 @@ if [[ $COMPOSER -ne 0 ]]; then
     echo -e "\nComposer is not installed"
 else
 
-    if [ -d "./vendor" ] 
+    if [ -d "./vendor" ]
     then
         echo -e "\nUpdating composer libraries ...."
         composer update
@@ -72,4 +72,3 @@ else
         composer install
     fi
 fi
-
