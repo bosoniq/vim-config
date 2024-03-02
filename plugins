@@ -14,6 +14,7 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'kburdett/vim-nuuid'
 Plug 'nvimdev/dashboard-nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
@@ -34,5 +35,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'BurntSushi/ripgrep'
 Plug 'smartpde/telescope-recent-files'
+Plug 'tomasky/bookmarks.nvim'
 
 call plug#end()

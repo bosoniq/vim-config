@@ -59,12 +59,6 @@ Indent Lines
 - <leader>ig - toggle indent guide lines
 
 
-Scaffolding
-===========
-
-type scaffolding and select from the scaffolding options available (class, interface, trait, enum etc)
-
-
 Coc-snippets
 ============
 
@@ -72,16 +66,9 @@ Coc-snippets
 <C-k> - Jump to previous snippet tabstop
 
 
-
-Open class shortcut
-===================
-
-gd (whilst cursor over method)
-
-
-
-
-
+Vim-easy-align
+==============
+vipga*|: - align md/bdd table
 
 
 Useful help pages
