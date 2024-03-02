@@ -2,6 +2,7 @@
     "require-dev": {
         "phpstan/phpstan": "1.10.*",
         "squizlabs/php_codesniffer": "3.7.*",
-        "phpmd/phpmd": "2.*"
+        "phpmd/phpmd": "2.*",
+        "phpunit/phpunit": "^11.0"
     }
 }
