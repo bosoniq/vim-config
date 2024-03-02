@@ -55,20 +55,3 @@ echo -e "\nCreating symbolic links ...."
 ln -s ${INIT} ~/.config/nvim/init.vim
 ln -s ${COCSETTINGS} ~/.config/nvim/coc-settings.json
 ln -s ${BUILD}/lua ~/.config/nvim/lua
-
-# composer dependency installation/update
-composer -v > /dev/null 2>&1
-COMPOSER=$?
-if [[ $COMPOSER -ne 0 ]]; then
-    echo -e "\nComposer is not installed"
-else
-
-    if [ -d "./vendor" ]
-    then
-        echo -e "\nUpdating composer libraries ...."
-        composer update
-    else
-        echo -e "\nInstalling composer libraries ...."
-        composer install
-    fi
-fi
