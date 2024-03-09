@@ -1,9 +1,0 @@
-
-"""""""""""""""""""
-""" Colorshceme """
-"""""""""""""""""""
-set termguicolors     " enable true colors support
-colorscheme gotham
-
-" Set highlighted line
-:highlight CursorLine guifg=#091f2e guibg=#edb443

@@ -1,4 +1,0 @@
-
-" Convert json to human readable
-nmap =j :%!python -m json.tool<CR>
-
