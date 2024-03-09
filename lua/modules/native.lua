@@ -57,7 +57,7 @@ vim.keymap.set('v', '<Leader>sc', '"+y')
 -- Yank mods --
 ---------------
 -- yank relative path to system clipboard (\crp)
-vim.keymap.set('n', '<Leader>crp', '<cmd>pet @+=expand("%")<CR>')
+vim.keymap.set('n', '<Leader>crp', '<cmd>let @+=expand("%")<CR>')
 
 -- yank file name to system clipboard (\cfn)
 vim.keymap.set('n', '<Leader>cfn', '<cmd>let @+=expand("%:t")<CR>')
