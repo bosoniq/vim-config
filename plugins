@@ -8,7 +8,6 @@ Plug 'tpope/vim-commentary' " For commenting out
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'elentok/format-on-save.nvim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'epwalsh/obsidian.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'kburdett/vim-nuuid'
@@ -16,11 +15,13 @@ Plug 'nvimdev/dashboard-nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/vim-easy-align'
 
+""" PHP
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
 Plug 'yaegassy/coc-phpstan', {'do': 'yarn install --frozen-lockfile'}
 Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'arnaud-lb/vim-php-namespace'
+Plug 'ccaglak/namespace.nvim'
 
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
@@ -36,5 +37,6 @@ Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'BurntSushi/ripgrep'
 Plug 'smartpde/telescope-recent-files'
 Plug 'tomasky/bookmarks.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()

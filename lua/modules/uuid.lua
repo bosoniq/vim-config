@@ -1,1 +1,1 @@
-vim.keymap.set('n', '<Leader>uu', '<Plug>Nuuid')
+vim.keymap.set('n', '<Leader>u', '<Plug>Nuuid')
