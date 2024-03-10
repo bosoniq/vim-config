@@ -96,4 +96,4 @@ vim.keymap.set("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_
 -- cycle options upwards
 vim.keymap.set("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
-vim.keymap.set('n', '<leader>gl', '<Plug>(coc-codelens-action)', {silent = true})
+vim.keymap.set('n', '<leader>cl', '<Plug>(coc-codelens-action)', {silent = true})
