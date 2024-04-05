@@ -10,8 +10,12 @@
         }
     },
     "intelephense.composer.path": "~/bin/composer",
+    "intelephense.phpunit.path": "CONFIGDIR/vendor/bin/phpunit",
+    "intelephense.client.disableInlayHints": false,
+    "intelephense.format.enable": true,
     "snippets.ultisnips.directories": ["CONFIGDIR/snippets"],
     "coc.preferences.extensionUpdateCheck": "daily",
     "phpstan.toolPath": "CONFIGDIR/vendor/bin/phpstan",
-    "phpstan.level": "9"
+    "phpstan.level": "9",
+    "codeLens.enable": true
 }
