@@ -23,9 +23,6 @@ def get_autoload_paths():
 
 	return paths
 
-def class_name_from_file():
-	return re.match(r'.*(?=\.)', fn).group()
-
 def get_namespace():
 	dir_path = os.path.dirname(path) + '/'
 	for ns, fp in get_autoload_paths().items():
@@ -45,64 +42,6 @@ def uppercase_first(string):
 
 	return string[0].upper() + string[1:]
 
-def split_arg_and_type(arg):
-	parts = list(map(lambda s: s.strip(), arg.strip().split(' ')))
-
-	if len(parts) != 2:
-		return ['mixed', parts[0]]
-
-	return parts
-
-def generate_properties(args):
-	args = args.strip()
-
-	if args:
-		args = args.split(',')
-		args = list(map(split_arg_and_type, args))
-	else: 
-		args = []
-
-	properies = ''
-	for arg in args:
-		properies += '\n    /** @var ' + arg[0] + ' */'
-		properies += '\n    private ' + arg[1] + ';\n'
-
-	return properies
-
-def set_fields_from_arguments(args):
-	args = args.strip()
-
-	if args:
-		args = args.split(',')
-		args = list(map(split_arg_and_type, args))
-	else: 
-		args = []
-
-	properies = [] 
-	for arg in args:
-		properies.append('$this->' + arg[1][1:] + ' = ' + arg[1] + ';')
-
-	return properies
-
-def docblock(args):
-	args = args.strip()
-
-	if args:
-		args = args.split(',')
-		args = list(map(split_arg_and_type, args))
-	else: 
-		args = []
-
-	from functools import reduce
-	max_type_len = reduce(lambda curr, arg: len(arg[0]) if len(arg[0]) > curr else curr, args, 0)
-
-	block = ''
-	for arg in args:
-		block += '\n     * @param ' + arg[0].ljust(max_type_len) +' ' + arg[1]
-
-	if block: block += '\n     *'
-
-	return block
 endglobal
 
 
@@ -130,16 +69,8 @@ snippet shout "php echo and exit"
 echo '${1}'; exit;
 endsnippet
 
-snippet r "php r() and exit"
-r($${1}); exit;
-endsnippet
-
 snippet dd "php dd()"
 dd($${1});
-endsnippet
-
-snippet dump "php dump and die"
-dump($${1}); exit;
 endsnippet
 
 snippet eqstring "equals string" w
@@ -154,28 +85,15 @@ snippet eqarray "equals array" w
 [] === $${1}
 endsnippet
 
-snippet ns "php namespace" b
-namespace `!p snip.rv = get_namespace()`;
-
-endsnippet
-
 snippet mkConstructor "php constructor" b
-`!p snip.rv = generate_properties(t[1])`
-public function __construct($1)
+public function __construct(private `!p snip.rv = uppercase_first(t[1])` $${1})
 {
-	${0:`!p
-snip >> 1
-for l in set_fields_from_arguments(t[1]): snip += l`}
 }
 endsnippet
 
 snippet mkInvoke "php invoke" b
-`!p snip.rv = generate_properties(t[1])`
-public function __invoke($1): void
+public function __invoke(private `!p snip.rv = uppercase_first(t[1])` $${1}): void
 {
-	${0:`!p
-snip >> 1
-for l in set_fields_from_arguments(t[1]): snip += l`}
 }
 endsnippet
 
@@ -206,26 +124,14 @@ protected $${2:`!p if (is_custom_type(t[1])): snip.rv = lowercase_first(t[1])`};
 endsnippet
 
 snippet mkMethod "method" b
-/**`!p snip.rv = docblock(t[3])`
- * @return $5
- */
 ${1:public} function ${2:Name}(${3:string} $${4:param}): ${5:void}
 {
 	$0
 }
 endsnippet
 
-snippet mkSetter "setter" b
-/** @param ${1} $${2:`!p snip.rv = lowercase_first(t[1]) if is_custom_type(t[1]) else ''`} */
-public function set`!p snip.rv = uppercase_first(t[2])`(`!p snip.rv = t[1] + ' ' if is_custom_type(t[1]) else ''`$$2)
-{
-	$this->$2 = `!p snip.rv = '' if is_custom_type(t[1]) else '(' + t[1] + ') '`$$2;
-}
-endsnippet
-
 snippet mkGetter "getter" b
-/** @return ${1} */
-public function get${2:`!p snip.rv = t[1] if is_custom_type(t[1]) else ''`}()
+public function ${2:`!p snip.rv = t[1] if is_custom_type(t[1]) else ''`}()
 {
 	return $this->`!p snip.rv = lowercase_first(t[2])`;
 }
@@ -235,19 +141,6 @@ snippet mkGetterSilent "getter without get prefix" b
 public function ${1}(): ${2:type}
 {
 	return $this->${1}
-}
-endsnippet
-
-snippet if "php if" !b
-if (${1}) {
-	$0
-}
-endsnippet
-
-snippet foreach "php foreach" b
-foreach ($${1:array} as $${2:field} => $${3:value})
-{
-	$0
 }
 endsnippet
 
@@ -265,51 +158,46 @@ endsnippet
 
 snippet mkTestMethod "make test" b
 /**
- * @Given 
- * @When 
- * @Then 
+ * @Given
+ * @When
+ * @Then
  */
 public function test${1}(): void
 {
-	// Given 
+	// Given
 
-	// When 
+	// When
 
-	// Then 
+	// Then
 	self::assertTrue(true);
 }
 endsnippet
-
 
 snippet mkTestSetup "make test setup method" b
 protected function setUp(): void
 {
 	parent::setUp();
 
-	$this->${1} = ${2};
+	private `!p snip.rv = uppercase_first(t[1])`|MockObject $${1};
+	$this->${1} = $this->getMock(`!p snip.rv = uppercase_first(t[1])`::class);
+
+	$this->${2} = new `!p snip.rv = uppercase_first(t[2])`(
+		$this->${1},
+	);
 }
 endsnippet
 
-
-snippet printRefactor "Print refctor commands" b
-/**
- * PHP Refactoring
- * ===============
- * <leader>fcc  completeConstructor
- * <Leader>rlv  PhpRenameLocalVariable()
- * <Leader>rcv  PhpRenameClassVariable()
- * <Leader>rm   PhpRenameMethod()
- * <Leader>eu   PhpExtractUse()
- * <Leader>ec   PhpExtractConst()
- * <Leader>ep   PhpExtractClassProperty()
- * <Leader>em   PhpExtractMethod()
- * <Leader>np   PhpCreateProperty()
- * <Leader>==   PhpAlignAssigns()
- * <Leader>sg   PhpCreateSettersAndGetters()
- * <Leader>cog  PhpCreateGetters()
- * <Leader>da   PhpDocAll()
- * <leader>fcn  fixClassName
- * <leader>fns  fixNamespace
- */
+snippet mkTestMock "make test mock class" b
+$this->${1} = $this->getMock(`!p snip.rv = uppercase_first(t[1])`::class);
 endsnippet
 
+snippet mkTestMockDeclaration "make test mock parameter declaration" b
+private `!p snip.rv = uppercase_first(t[1])`|MockObject $${1};
+endsnippet
+
+snippet mkTestMockCall "make test mock method call" b
+$this->${1}->expects(self::once())
+	->method('${2}')
+	->with(${3})
+	->willReturn(${4})
+endsnippet
