@@ -167,9 +167,10 @@ public function test${1}(): void
 	// Given
 
 	// When
+    $result = $this->${2}->${3}(${4});
 
 	// Then
-	self::assertTrue(true);
+	self::assertTrue($result);
 }
 endsnippet
 
@@ -199,5 +200,5 @@ snippet mkTestMockCall "make test mock method call" b
 $this->${1}->expects(self::once())
 	->method('${2}')
 	->with(${3})
-	->willReturn(${4})
+	->willReturn(${4});
 endsnippet
