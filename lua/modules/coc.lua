@@ -56,17 +56,12 @@ vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)')
 vim.keymap.set('n', '<leader>re', '<Plug>(coc-codeaction-refactor)', {silent = true})
 vim.keymap.set({'n', 'x'}, '<leader>r', '<Plug>(coc-codeaction-refactor-selected)', {silent = true})
 
--- " Add `:Fold` command to fold current buffer
-vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", {nargs = '?'})
-
 -- Add `:Format` command to format current buffer
 vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
 
 -- Add `:OR` command for organize imports of the current buffer (Not with intelephense)
 -- vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 
-vim.keymap.set('', '<F6>', '<Cmd>Fold<cr>')
-vim.keymap.set('', '<F7>', 'zE')
 vim.keymap.set('', '<F2>', '<Cmd>Format<cr>')
 
 -- Mappings for CoCList
