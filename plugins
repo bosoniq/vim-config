@@ -4,7 +4,6 @@ call plug#begin('~/.local/share/nvim/site/autoload/')
 
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-commentary' " For commenting out
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'elentok/format-on-save.nvim'
@@ -12,11 +11,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'epwalsh/obsidian.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'kburdett/vim-nuuid'
-Plug 'nvimdev/dashboard-nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/vim-easy-align'
-Plug 'kevinhwang91/nvim-ufo'
-Plug 'kevinhwang91/promise-async'
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'

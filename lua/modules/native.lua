@@ -61,3 +61,13 @@ vim.keymap.set('n', '<Leader>crp', '<cmd>let @+=expand("%")<CR>')
 
 -- yank file name to system clipboard (\cfn)
 vim.keymap.set('n', '<Leader>cfn', '<cmd>let @+=expand("%:t")<CR>')
+
+
+-----------------
+-- Fold config --
+-----------------
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+vim.opt.foldnestmax = 3
+vim.opt.foldcolumn = "2"
