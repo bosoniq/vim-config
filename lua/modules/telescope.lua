@@ -16,3 +16,6 @@ vim.api.nvim_set_keymap("n", "<leader>fr",
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
+
+-- Disable folding in Telescope's result window.
+vim.api.nvim_create_autocmd("FileType", { pattern = "TelescopeResults", command = [[setlocal foldlevelstart=999]] })
