@@ -18,7 +18,6 @@ Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
 Plug 'yaegassy/coc-phpstan', {'do': 'yarn install --frozen-lockfile'}
 Plug 'adoy/vim-php-refactoring-toolbox'
-Plug 'arnaud-lb/vim-php-namespace'
 
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
