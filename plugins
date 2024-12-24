@@ -7,7 +7,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'elentok/format-on-save.nvim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'ThePrimeagen/harpoon'
 Plug 'kburdett/vim-nuuid'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -16,7 +15,6 @@ Plug 'jonarrien/telescope-cmdline.nvim'
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
-Plug 'yaegassy/coc-phpstan', {'do': 'yarn install --frozen-lockfile'}
 Plug 'adoy/vim-php-refactoring-toolbox'
 
 Plug 'ap/vim-buftabline'
@@ -25,8 +23,6 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'whatyouhide/vim-gotham'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nathanaelkane/vim-indent-guides'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }

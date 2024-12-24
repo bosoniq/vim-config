@@ -9,7 +9,6 @@ CONFIGS="${PWD}/vim-native"
 INIT=${BUILD}/init.vim
 LUAMAIN="${BUILD}//lua//main.lua"
 VIMRC=${BUILD}/vimrc
-COCSETTINGS=${BUILD}/coc-settings.json
 LUAMODULES=${BUILD}/lua/${LUANAMESPACE}/
 
 # clean existing build
@@ -27,7 +26,6 @@ mkdir ${BUILD}
 mkdir "${BUILD}//lua/"
 mkdir ${LUAMODULES}
 touch ${VIMRC}
-touch ${COCSETTINGS}
 touch ${INIT}
 touch ${LUAMAIN}
 
@@ -39,11 +37,6 @@ initVim=$(<init.vim)
 initVim="${initVim//CONFIGDIR/$PWD}"
 echo "$initVim" > ${INIT}
 
-# create coc settings file
-cocSettings=$(<coc-settings.json)
-cocSettings="${cocSettings//CONFIGDIR/$PWD}"
-echo "$cocSettings" > ${COCSETTINGS}
-
 # copy and update lua modules
 main=$(<lua/main.lua)
 main="${main//NAMESPACE/$LUANAMESPACE}"
@@ -53,5 +46,4 @@ cp -R ${PWD}/lua/modules/. ${LUAMODULES}
 # create symbolic links
 echo -e "\nCreating symbolic links ...."
 ln -s ${INIT} ~/.config/nvim/init.vim
-ln -s ${COCSETTINGS} ~/.config/nvim/coc-settings.json
 ln -s ${BUILD}/lua ~/.config/nvim/lua
