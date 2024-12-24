@@ -1,0 +1,4 @@
+language_server_completion.trim_leading_dollar: true
+code_transform.class_new.variants:
+    class_with_construct: class
+    test_class: testclass

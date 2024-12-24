@@ -47,3 +47,6 @@ cp -R ${PWD}/lua/modules/. ${LUAMODULES}
 echo -e "\nCreating symbolic links ...."
 ln -s ${INIT} ~/.config/nvim/init.vim
 ln -s ${BUILD}/lua ~/.config/nvim/lua
+if [ ! -d 'phpactor' ]; then
+    ln -s ${PWD}/phpactor ~/.config/phpactor
+fi
