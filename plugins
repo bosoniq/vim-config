@@ -11,6 +11,7 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'kburdett/vim-nuuid'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/vim-easy-align'
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'}
 Plug 'jonarrien/telescope-cmdline.nvim'
 
 Plug 'StanAngeloff/php.vim'
