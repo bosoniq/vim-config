@@ -12,6 +12,7 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'kburdett/vim-nuuid'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/vim-easy-align'
+Plug 'jonarrien/telescope-cmdline.nvim'
 
 Plug 'StanAngeloff/php.vim'
 Plug 'joonty/vim-phpqa'
