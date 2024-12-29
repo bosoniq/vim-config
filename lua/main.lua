@@ -2,7 +2,6 @@
 lua phpstan = "COMPOSERBIN" .. "phpstan"
 
 lua utils = require('NAMESPACE/utils')
-lua require('NAMESPACE/buftabline')
 lua require('NAMESPACE/colourscheme')
 lua require('NAMESPACE/lightline')
 lua require('NAMESPACE/native')
