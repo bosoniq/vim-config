@@ -37,9 +37,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {silent = true})
     end
 
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
-      -- vim.keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.completion.trigger()<cr>')
+    if client:supports_method('textDocument/signatureHelp') then
+       vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, { noremap=true, silent=true })
     end
 
     if client:supports_method('textDocument/formatting') then
@@ -50,10 +49,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
           vim.lsp.buf.format({bufnr = args.buf, id = client.id})
         end,
       })
-    end
-
-    if client:supports_method('textDocument/signatureHelp') then
-       vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, { noremap=true, silent=true })
     end
 
     -- not currently supported

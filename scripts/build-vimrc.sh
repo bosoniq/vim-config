@@ -9,6 +9,7 @@ CONFIGS="${PWD}/vim-native"
 INIT=${BUILD}/init.vim
 LUAMAIN="${BUILD}//lua//main.lua"
 VIMRC=${BUILD}/vimrc
+COMPOSERBIN=${PWD}/vendor/bin/
 LUAMODULES=${BUILD}/lua/${LUANAMESPACE}/
 
 # clean existing build
@@ -40,6 +41,7 @@ echo "$initVim" > ${INIT}
 # copy and update lua modules
 main=$(<lua/main.lua)
 main="${main//NAMESPACE/$LUANAMESPACE}"
+main="${main//COMPOSERBIN/$COMPOSERBIN}"
 echo "$main" >> $VIMRC
 cp -R ${PWD}/lua/modules/. ${LUAMODULES}
 
