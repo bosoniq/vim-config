@@ -47,6 +47,6 @@
 
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  require('lspconfig')['intelephense'].setup {
+  require('lspconfig')['phpactor'].setup {
     capabilities = capabilities
   }
