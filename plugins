@@ -16,6 +16,7 @@ Plug 'jonarrien/telescope-cmdline.nvim'
 
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'joonty/vim-phpqa'
 
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
