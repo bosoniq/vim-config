@@ -38,6 +38,7 @@ ls.add_snippets("php", {
     s({trig = "pd", name = "prop dec"}, fmt("private {} ${} = {};", { i(1, "type"), i(2, "varName"), i(3, "value") })),
 
     -- doc snippets
+    s("doc", fmt("/** {} */", { i(1, "value") })),
     s("docTodo", fmt("// TODO: {}", { i(1, "message") })),
     s("docNote", fmt("// NOTE: {}", { i(1, "message") })),
     s("docParam", fmt("@param {} {}", { i(1, "type"), i(1, "varName") })),
@@ -48,35 +49,72 @@ ls.add_snippets("php", {
     s("eqstr", fmt("'' === ${}", { i(1, "var") })),
     s("eqnul", fmt("null === ${}", { i(1, "var") })),
     s("eqarr", fmt("[]=== ${}", { i(1, "var") })),
+    s("eqins", fmt("{} instanceof {}", { i(1, "variable"),  i(2, "class")})),
 
     -- php constructs
-    s("foreach", fmt(
-        [[
-            foreach(${} as ${} => ${}) {{
-                {}
-            }}
+    s({trig = "th", name = "$this->"}, fmt("$this->{}", { i(1, "val") })),
+    s({trig = "mc", desc = "$this->method(hint $param)"}, fmt("$this->{}({} ${});", { i(1, "method"), i(2, "hint"), i(3, "var") })),
+    s(
+        {trig = "foreach", desc = "foreach ($arr as $key => $value) {....}"},
+        fmt(
+            [[
+                foreach (${} as ${} => ${}) {{
+                    {}
+                }}
 
-        ]],
-        {
-            i(1, "array"),
-            i(2, "key"),
-            i(3, "value"),
-            i(0),
-        }
-    )),
-    s("if", fmt(
-        [[
-            if({}) {{
-                {}
-            }}
+            ]],
+            {
+                i(1, "array"),
+                i(2, "key"),
+                i(3, "value"),
+                i(0),
+            }
+        )
+    ),
+    s(
+        {trig = "while", desc = "while (condition) {....}"},
+        fmt(
+            [[
+                while ({}) {{
+                    {}
+                }}
 
-        ]],
-        {
-            i(1, "condition"),
-            i(0),
-        }
-    )),
-    s({trig = "mc", desc = "method call"}, fmt("$this->{}({} ${});", { i(1, "method"), i(2, "hint"), i(3, "var") })),
+            ]],
+            {
+                i(1, "assertion"),
+                i(0),
+            }
+        )
+    ),
+    s(
+        {trig = "do", desc = "do {....} while (condition)"},
+        fmt(
+            [[
+                do {{
+                    {}
+                }} while ({})
+            ]],
+            {
+                i(0),
+                i(1, "assertion"),
+            }
+        )
+    ),
+    s(
+        {trig = "if", desc = "if(condition) {....}"},
+        fmt(
+            [[
+                if ({}) {{
+                    {}
+                }}
+
+            ]],
+            {
+                i(1, "condition"),
+                i(0),
+            }
+        )
+    ),
     s({trig = "m", name = "New method", desc = "Create a new class method"},
       fmt(
           [[
@@ -108,11 +146,28 @@ ls.add_snippets("php", {
             [[
                 public function __invoke({} ${})
                 {{
+                    {}
                 }}
             ]],
             {
                 i(1, "hint"),
                 i(1, "param"),
+                i(0),
+            }
+        )
+    ),
+    s({trig = "match", name = "New match", desc = "Create a new match"},
+        fmt(
+            [[
+                ${} = match (${}) {{
+                    'value' => {},
+                    default => new Exception(),
+                }};
+            ]],
+            {
+                i(1, "result"),
+                i(2, "subject_expression"),
+                i(3, "result_expression"),
             }
         )
     ),
