@@ -2,6 +2,8 @@ local ls = require("luasnip")
 
 -- Config
 vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<Tab>", function() ls.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, {silent = true})
 
 -- functions
 local function renderTypeHint(args)
@@ -45,7 +47,7 @@ ls.add_snippets("php", {
     s("docReturn", fmt("@return {}", { i(1, "type") })),
     s("docThrows", fmt("@throws {}", { i(1, "Exception") })),
 
-    -- comparison snippets
+    -- evaluation snippets
     s("eqstr", fmt("'' === ${}", { i(1, "var") })),
     s("eqnul", fmt("null === ${}", { i(1, "var") })),
     s("eqarr", fmt("[]=== ${}", { i(1, "var") })),
@@ -171,6 +173,28 @@ ls.add_snippets("php", {
             }
         )
     ),
+    s({trig = "array_map", name = "New array_map"},
+        fmt(
+            [[
+                $result = array_map({}, ${});
+            ]],
+            {
+                i(0, "fn($val) => return $val"),
+                i(1, "array"),
+            }
+        )
+    ),
+    s({trig = "array_filter", name = "New array_filter"},
+        fmt(
+            [[
+                $result = array_filter(${}, {});
+            ]],
+            {
+                i(1, "array"),
+                i(0, "fn($val) => return $val"),
+            }
+        )
+    ),
 
     -- unit test snippets
     s({trig = "tm", name = "New test method", desc = "Create a new unit test method"},
@@ -200,29 +224,31 @@ ls.add_snippets("php", {
           }
       )
     ),
-    -- s("testset", fmt(
-    --     [[
-    --         private `!p snip.rv = uppercase_first(t[1])`|MockObject $${1};
-    --
-    --         protected function setUp(): void
-    --         {{
-    --             parent::setUp();
-    --
-    --             $this->{} = $this->getMock(`!p snip.rv = uppercase_first(t[1])`::class);
-    --
-    --             $this->{} = new `!p snip.rv = uppercase_first(t[2])`(
-    --                 $this->{},
-    --             );
-    --         }}
-    --     ]],
-    --     {
-    --         i(1, "Name"),
-    --         i(2, "service"),
-    --         i(3, "method"),
-    --         i(4, "param"),
-    --     }
-    -- ))
-
+    s({trig = "ts", name = "New unit test setup", desc = "Create a new unit test setup method"},
+        {
+          t({ "", "private " }),
+          f(renderTypeHint, 1),
+          t("|MockObject $"),
+          i(1, "className"),
+          t(";"),
+          t({ "", "" }),
+          t({ "", "" }),
+          t("protected function setUp(): void"),
+          t({ "", "{" }),
+          t({ "", "" }),
+          t("\tparent::setUp();"),
+          t({ "", "" }),
+          t({ "", "" }),
+          t("\t$this->"),
+          rep(1),
+          t(" = new "),
+          f(renderTypeHint, 1),
+          t("("),
+          i(0),
+          t(");"),
+          t({ "", "}" }),
+        }
+    ),
     s({trig = "tmk", name = "New test class mock", desc = "Create a new unit test class mock"},
       fmt(
           [[
