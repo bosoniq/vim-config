@@ -20,7 +20,7 @@ Plug 'joonty/vim-phpqa'
 
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-Plug 'whatyouhide/vim-gotham'
+Plug 'oxfist/night-owl.nvim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'preservim/vim-indent-guides'
 
