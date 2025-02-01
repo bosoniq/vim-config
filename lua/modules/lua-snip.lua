@@ -50,7 +50,7 @@ ls.add_snippets("php", {
     -- evaluation snippets
     s("eqstr", fmt("'' === ${}", { i(1, "var") })),
     s("eqnul", fmt("null === ${}", { i(1, "var") })),
-    s("eqarr", fmt("[]=== ${}", { i(1, "var") })),
+    s("eqarr", fmt("[] === ${}", { i(1, "var") })),
     s("eqins", fmt("{} instanceof {}", { i(1, "variable"),  i(2, "class")})),
 
     -- php constructs
@@ -179,7 +179,7 @@ ls.add_snippets("php", {
                 $result = array_map({}, ${});
             ]],
             {
-                i(0, "fn($val) => return $val"),
+                i(0, "fn($val) => $val"),
                 i(1, "array"),
             }
         )
