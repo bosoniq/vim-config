@@ -20,7 +20,6 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'oxfist/night-owl.nvim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'preservim/vim-indent-guides'
-Plug 'pasky/claude.vim'
 
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'neovim/nvim-lspconfig'
