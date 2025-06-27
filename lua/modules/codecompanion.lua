@@ -16,4 +16,5 @@ require("codecompanion").setup({
       })
     end,
   },
+  prompt_library = require("NAMESPACE/codecompanion-prompt-library")
 })
