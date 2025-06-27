@@ -11,7 +11,7 @@ require("codecompanion").setup({
     gemini = function()
       return require("codecompanion.adapters").extend("gemini", {
         env = {
-          api_key = "GEMINI_ACCESS_TOKEN",
+          api_key = vim.base64.decode(vim.env.GEMINI_KEY),
         },
       })
     end,
