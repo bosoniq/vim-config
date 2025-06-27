@@ -45,6 +45,9 @@ main="${main//COMPOSERBIN/$COMPOSERBIN}"
 echo "$main" >> $VIMRC
 cp -R ${PWD}/lua/modules/. ${LUAMODULES}
 
+# Repalce NAMESPACE with LUANAMESPACE in all modules
+find "${LUAMODULES}" -type f -exec sed -i "s|NAMESPACE|${LUANAMESPACE}|g" {} +
+
 # create symbolic links
 echo -e "\nCreating symbolic links ...."
 ln -s ${INIT} ~/.config/nvim/init.vim
