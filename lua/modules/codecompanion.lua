@@ -1,10 +1,16 @@
 require("codecompanion").setup({
   strategies = {
       chat = {
-        adapter = 'gemini',
+        adapter = {
+            name = 'gemini',
+            model = 'gemini-2.5-pro'
+        }
       },
       inline = {
-        adapter = 'gemini',
+        adapter = {
+            name = 'gemini',
+            model = 'gemini-2.5-pro'
+        }
       },
   },
   adapters = {
