@@ -17,11 +17,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, {})
     vim.keymap.set('n', 'gcm', function() vim.cmd('PhpactorContextMenu') end, {})
     vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {silent = true})
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {silent = true})
+    vim.keymap.set('n', 'gd', ':botright PhpactorGotoDefinition vsplit<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {silent = true})
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, {silent = true})
     vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, { noremap=true, silent=true })
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, { noremap=true, silent=true })
+
 
     -- Format the current buffer on save
     vim.api.nvim_create_autocmd('BufWritePre', {
