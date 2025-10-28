@@ -1,5 +1,9 @@
-require'lspconfig'.phpactor.setup{
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+vim.lsp.config['phpactor'] = {
     on_attach = on_attach,
+    capabilities = capabilities,
     init_options = {
         ["language_server_phpstan.bin"] = phpstan,
         ["language_server_completion.trim_leading_dollar"] = true,
