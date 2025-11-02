@@ -9,7 +9,7 @@ CONFIGS="${PWD}/vim-native"
 INIT=${BUILD}/init.vim
 LUAMAIN="${BUILD}//lua//main.lua"
 VIMRC=${BUILD}/vimrc
-COMPOSERBIN=${PWD}/vendor/bin/
+COMPOSERBIN=${HOME}/.composer/vendor/bin/
 LUAMODULES=${BUILD}/lua/${LUANAMESPACE}/
 
 # clean existing build
