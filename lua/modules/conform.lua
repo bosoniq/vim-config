@@ -1,7 +1,7 @@
 require("conform").setup({
   formatters = {
     phpcbf = {
-      command = vim.fn.expand("~/Store/Libs/vim-config/vendor/bin/phpcbf"),
+      command = vim.fn.expand("~/.composer/vendor/bin/phpcbf"),
       args = { "--standard=PSR12", "$FILENAME" },
     },
     prettier = {
