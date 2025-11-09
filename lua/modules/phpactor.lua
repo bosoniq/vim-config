@@ -2,7 +2,10 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.lsp.config['phpactor'] = {
-    on_attach = on_attach,
+    cmd = { 'phpactor', 'language-server' },
+    filetypes = { 'php' },
+    root_markers = { 'composer.json', 'composer.lock', '.git' },
+    root_dir = vim.fs.root(0, '.git'),
     capabilities = capabilities,
     init_options = {
         ["language_server_phpstan.bin"] = phpstan,
@@ -13,6 +16,7 @@ vim.lsp.config['phpactor'] = {
     }
 }
 
+vim.lsp.enable('phpactor')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
@@ -26,15 +30,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, {silent = true})
     vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, { noremap=true, silent=true })
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, { noremap=true, silent=true })
-
-
-    -- Format the current buffer on save
-    -- vim.api.nvim_create_autocmd('BufWritePre', {
-    --   buffer = args.buf,
-    --   callback = function()
-    --     vim.lsp.buf.format({bufnr = args.buf, id = client.id})
-    --   end,
-    -- })
 
     vim.diagnostic.config({
       signs = {
