@@ -1,12 +1,22 @@
 local telescope = require('telescope')
 
-telescope.setup{}
+telescope.setup{
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  }
+}
 
 -- Load extensions.
 telescope.load_extension('recent_files')
 telescope.load_extension('harpoon')
 telescope.load_extension('bookmarks')
 telescope.load_extension('cmdline')
+telescope.load_extension('fzf')
 
 -- Map a shortcut to open the picker.
 vim.api.nvim_set_keymap("n", "<leader>fr",
