@@ -13,8 +13,6 @@ telescope.setup{
 
 -- Load extensions.
 telescope.load_extension('recent_files')
-telescope.load_extension('harpoon')
-telescope.load_extension('bookmarks')
 telescope.load_extension('cmdline')
 telescope.load_extension('fzf')
 

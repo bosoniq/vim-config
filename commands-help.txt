@@ -1,12 +1,4 @@
 
-Intelephense
-============
-
-<leader>fcn  fixClassName
-<leader>fns  fixNamespace
-<leader>fcc  completeConstructor
-
-
 
 PHP Refactoring
 ===============
@@ -38,32 +30,10 @@ cs"'  - "word" -> 'word'
 ds"   - "word" -> word
 
 
-Coc shortcuts
-=============
-
-<leader>a   codeaction cursor
-<leader>ga  codeaction line
-<leader>re  codeaction refactor
-gd          jump to method definition
-<C-space>   coc refresh
-
-" Formatting selected code
-<leader>f  <Plug>(coc-format-selected)
-
-
-:CocCommand int<TAB> (provides a list of Intelephense commands - useful for composer)
-
 Indent Lines
 ============
 
 - <leader>ig - toggle indent guide lines
-
-
-Coc-snippets
-============
-
-<C-j> - Jump to next snippet tabstop
-<C-k> - Jump to previous snippet tabstop
 
 
 Vim-easy-align
