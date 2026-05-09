@@ -1,4 +1,5 @@
 local ls = require("luasnip")
+local utils = require("NAMESPACE.utils")
 
 -- Config
 vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
@@ -35,7 +36,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("php", {
     s("dd", fmt("dd(${});", { i(1, "test") })),
-    s("shout", fmt("echo '{}!'; exit;", { i(1, "here") })),
+    s("shout", fmt("echo '{}!'; exit;", { f(utils.generateRandomId) })),
     s({trig = "vd", name = "var dec"}, fmt("${} = {};", { i(1, "varName"), i(2, "value") })),
     s({trig = "pd", name = "prop dec"}, fmt("private {} ${} = {};", { i(1, "type"), i(2, "varName"), i(3, "value") })),
 
